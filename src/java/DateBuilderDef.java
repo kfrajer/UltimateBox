@@ -23,21 +23,40 @@ class DateBuilder {
   String format;
   StringList data;
 
+ /**
+  *
+  *  TBD
+  *
+  */
   DateBuilder() {
     lastInquire="";
     format=defaultFormat();
     data=new StringList();
   }
 
+ /**
+  *
+  *  TBD
+  *
+  */
   String defaultFormat() {
     return "$DD/$MO - $HH:$MM";  //2157-1257
   }
 
-
+ /**
+  *
+  *  TBD
+  *
+  */
   String printCurrentDate() {
     return printCurrentDate(format);
   }
 
+ /**
+  *
+  *  TBD
+  *
+  */
   String printCurrentDate(String fmt) { 
 
     String outdate="";
@@ -52,6 +71,11 @@ class DateBuilder {
     return outdate;
   }
 
+ /**
+  *
+  *  TBD
+  *
+  */    
   void dateTokenizer(String instr) {
 
     String s="";
@@ -76,6 +100,11 @@ class DateBuilder {
     }
   }  //END dateTokenizer
 
+ /**
+  *
+  *  TBD
+  *
+  */    
   String buildDate() {
     String ss="";
 
@@ -114,6 +143,11 @@ class DateBuilder {
     return ss;
   }
 
+ /**
+  *
+  *  TBD
+  *
+  */    
   //Attemps to extract token of the form $xx. If fails, it assigns INVALID. 
   //Return i+3 so to read the next char in source string 
   int validateDateToken(String str, int idxStr) {
@@ -152,16 +186,38 @@ class DateBuilder {
     return idxStr+2;
   }
 
+ /**
+  *
+  *  TBD
+  *
+  */    
   boolean isALetter(char c) {    
     return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
   }
+
+ /**
+  *
+  *  TBD
+  *
+  */    
   boolean isANumber(char c) {    
     return (c >= '0' && c <= '9');
-  }  
+  }
+
+ /**
+  *
+  *  TBD
+  *
+  */    
   boolean isAlphaNumeric(char c) {
     return isALetter(c) || isANumber(c);
   }
 
+ /**
+  *
+  *  TBD
+  *
+  */    
   char upperCase(char c) {
 
     if (isANumber(c)) return c;
@@ -171,6 +227,11 @@ class DateBuilder {
     return  c; //Nothing to do
   }
 
+ /**
+  *
+  *  TBD
+  *
+  */    
   String testCase(String fmt) {
 
     String ss = "Format requested\t>>"+fmt+"<<\n\tResult\t>>"+printCurrentDate(fmt)+"<<";
