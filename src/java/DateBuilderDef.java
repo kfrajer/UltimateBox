@@ -1,4 +1,8 @@
 
+package com.ultimatebox;
+
+import processing.core.PApplet;
+
 /*
 
   This library is free software; you can redistribute it and/or
@@ -15,7 +19,21 @@
   Boston, MA  02111-1307  USA
 */
 
-// Do nt modify this class. Modify test case demo
+/**
+ * Class for generating strings with date-time commands
+ * 
+ * <p>
+ * This class permits the generation of strings with date-time data codes embeded <br>
+ * in the actual returning string Codes used follow the standard defined at <br>
+ * Java Oracle 
+ * More comments....
+ * </p>
+ * @author Kfrajer/Chrisir
+ * 
+ * @version 0.10
+ * 
+ * @since 0.10
+ */
 class DateBuilder {
 
   final String INVALID="INVALID";
@@ -23,11 +41,11 @@ class DateBuilder {
   String format;
   StringList data;
 
- /**
-  *
-  *  TBD
-  *
-  */
+  /**
+	 * Constructor for creating a Stopwatch
+	 * 
+	 * @param parent The parent PApplet (Processing sketch) that uses this instance
+	 */
   DateBuilder() {
     lastInquire="";
     format=defaultFormat();
@@ -35,10 +53,8 @@ class DateBuilder {
   }
 
  /**
-  *
-  *  TBD
-  *
-  */
+	 * @return Returns the current date and time. This defines the default format
+	 */
   String defaultFormat() {
     return "$DD/$MO - $HH:$MM";  //2157-1257
   }
