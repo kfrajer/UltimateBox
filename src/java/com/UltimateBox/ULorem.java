@@ -34,7 +34,7 @@ public final class ULorem{
 
         //REFERENCE: https://github.com/mgeisler/lipsum
 	//REFERENCE:
-	curentLength = lorem.length();
+	currentLength = lorem.length();
     }
 
     /**
@@ -55,7 +55,7 @@ public final class ULorem{
 	String ret="";
 
 	if(len < lorem.length())
-	    return loren.substring(0,len);
+	    return lorem.substring(0,len);
 
 	int whole = len / lorem.length();
 	int reminder = len % lorem.length();
