@@ -41,8 +41,8 @@ public class UToast {
 
     protected float locx,locy;
     protected String msg;
-    protected color bgcolor;
-    protected color fontColor;    
+    protected int bgcolor;
+    protected int fontColor;    
     protected int duration_ms;
     protected int targetTime_ms;
      
@@ -62,10 +62,10 @@ public class UToast {
 	
 	p.registerMethod("dispose", this);
 	
-        locx=p.width*0.5;
-	locy=p.height*0.9;
-	bgcolor=color(120);
-	fontColor=color(15);
+        locx=p.width*0.5f;
+	locy=p.height*0.9f;
+	bgcolor=p.color(120);
+	fontColor=p.color(15);
 	
 	if(duration>LONG_TOAST)
 	    duration=LONG_TOAST;
@@ -77,16 +77,19 @@ public class UToast {
 
     public void draw() {
 
+	int wrec=p.ceil(p.textWidth(msg)*1.20f);
+	int hrec=p.ceil((p.textAscent()+p.textDescent())*1.20f);
+	
 	p.pushMatrix();
 	p.pushStyle();
 
-	fill(bgcolor);
-	stroke(fontColor);
-	rectMode(CENTER);
-	rect(locx.locy,wrec,hrec);
+	p.fill(bgcolor);
+	p.stroke(fontColor);
+	p.rectMode(PApplet.CENTER);
+	p.rect(locx,locy,wrec,hrec);
 
-	TextAlign(CENTER,CENTER);
-	text(msg,locx,locy);
+	p.textAlign(PApplet.CENTER,PApplet.CENTER);
+	p.text(msg,locx,locy);
 	
 	p.popStyle();
 	p.popMatrix();
@@ -94,13 +97,13 @@ public class UToast {
     }
 
     public void post(){
-	if( millis() >= targetTime_ms){
+	if( p.millis() >= targetTime_ms){
 	    disableToast();
 	}
     }
 
     protected void enableToast(){
-	targetTime_ms = millis() + duration_ms;
+	targetTime_ms = p.millis() + duration_ms;
 	p.registerMethod("draw", this);
 	p.registerMethod("post", this);
     }
