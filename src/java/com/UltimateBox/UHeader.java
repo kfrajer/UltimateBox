@@ -25,33 +25,36 @@ public class UHeader{
      * active user's process
      */
     protected PApplet p;
+    PFont pfontNormal; 
     PFont pfontHeadline; 
 
     /**
      * TBD
      */    
-    public UHeader(PApplet parent, String textHeadline, color colorHeadline ){
+    public UHeader(PApplet parent, String textHeadline, int colorHeadline ){
 
 	p=parent;
-	pfontHeadline = p.createFont("Arial", 19);
-	header(PApplet.textHeadline, colorHeadline);
+	pfontNormal   = p.createFont("Arial", 12); // small
+        pfontHeadline = p.createFont("Arial", 19); // big 
+	p.textFont (pfontNormal);                  // small is default
+	header(textHeadline, colorHeadline);
     }
 
     /**
      * TBD
      */
-    public void header(String textHeadline, color colorHeadline) {  
+    public void header(String textHeadline, int colorHeadline) {  
 	// show Headline : long form
 	// set aligement, color and font
 	p.textAlign(PApplet.CENTER);  
-	p.fill(PApplet.colorHeadline);   
+	p.fill(colorHeadline);   
 	p.textFont(pfontHeadline);
 	// show text 
 	p.text(textHeadline, 
-	       width/2, 19);
+	       p.width/2, 19);
 	// reset values to default 
 	p.textAlign(PApplet.LEFT);       // LEFT is default, restore default 
-	p.textFont(PApplet.pfontNormal); // small font "pfontNormal" is default, restore default
+	p.textFont(pfontNormal); // small font "pfontNormal" is default, restore default
     }//method 
     
 }
