@@ -49,9 +49,17 @@ public class UFooter{
      * Parent handle to hook to 
      * active user's process
      */
-    protected PApplet p;
+    protected PApplet p;   
     protected PFont pfontNormal; 
 
+    // consts colors
+
+    final int BLACK = 0;
+    final int WHITE = 0xffffffff;
+    final int RED   = 0xffff0000;
+    final int GREEN = 0xff00ff00;
+    final int BLUE  = 0xff0000ff;
+    final int GRAY =  0xff888888;
     /**
      * Constructor: TBD 
      * @param parent Handdle of active sketch calling this object
@@ -60,7 +68,7 @@ public class UFooter{
     public void UFooter(PApplet parent,String msg) {
 	p=parent;
 	UFooterLeft(msg);
-        p.pfontNormal = p.createFont("Arial", 12);   // small
+        pfontNormal = p.createFont("Arial", 12);   // small
 	
     }
 
@@ -70,19 +78,19 @@ public class UFooter{
     public void UFooterLeft(String msg) {
 	// different footers
 	// box 
-	p.fill(PApplet.GRAY);
+	p.fill(GRAY);
 	p.noStroke();  
 	p.rect(0, p.height-21, 
-	     p.width, 22);
+	       p.width, 22);
 	// line on the box   
-	p.stroke(PApplet.BLACK);
+	p.stroke(BLACK);
 	p.line( 0, p.height-21, 
-	      p.width, p.height-21); 
+		p.width, p.height-21); 
 
 	//  message 
 	p.textFont(pfontNormal); // small font "pfontNormal" is default
-	p.fill(PApplet.WHITE);  // white
-	p.text(msg, 6, height-6);
+	p.fill(WHITE);  // white
+	p.text(msg, 6, p.height-6);
     }
 
     /**
@@ -91,18 +99,18 @@ public class UFooter{
     public void UFooterCenter(String msg) {
 	// different footers
 	// box 
-	p.fill(PApplet.GRAY);
+	p.fill(GRAY);
 	p.noStroke();  
 	p.rect(0, p.height-21, 
-	     p.width, 22);
+	       p.width, 22);
 	// line on the box   
-	p.stroke(PApplet.BLACK);
+	p.stroke(BLACK);
 	p.line( 0, p.height-21, 
-	      p.width, p.height-21); 
+		p.width, p.height-21); 
 
 	//  message 
 	p.textFont(pfontNormal); // small font "pfontNormal" is default
-	p.fill(PApplet.WHITE);  // white
+	p.fill(WHITE);  // white
 	p.textAlign(PApplet.CENTER);   // Middle 
 	p.text(msg, p.width/2, p.height-6);
 	p.textAlign(PApplet.LEFT);       // LEFT is default, restore default
@@ -114,18 +122,18 @@ public class UFooter{
     public void UFooterRight(String msg) {
 	// different footers
 	// box 
-	p.fill(PApplet.GRAY);
+	p.fill(GRAY);
 	p.noStroke();  
 	p.rect(0, p.height-21, 
-	     p.width, 22);
+	       p.width, 22);
 	// line on the box   
-	p.stroke(PApplet.BLACK);
+	p.stroke(BLACK);
 	p.line( 0, p.height-21, 
-	      p.width, p.height-21); 
+		p.width, p.height-21); 
 
 	//  message 
 	p.textFont(pfontNormal); // small font "pfontNormal" is default
-	p.fill(PApplet.WHITE);  // white
+	p.fill(WHITE);  // white
 	p.textAlign(PApplet.RIGHT);     // RIGHT 
 	p.text(msg, p.width-8, p.height-6);
 	p.textAlign(PApplet.LEFT);       // LEFT is default, restore default
