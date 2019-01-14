@@ -1,0 +1,10 @@
+mkdir bin 
+"javac -d bin -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar com\UltimateBox\*.java" 
+"javac -d bin -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar com\UltimateBox\DateBuilderDef.java" 
+"javac -d bin -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar com\UltimateBox\UArrow.java" 
+"javac -d bin -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar com\UltimateBox\UFooter.java" 
+"javac -d bin -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar com\UltimateBox\UHeader.java" 
+"javac -d bin -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar com\UltimateBox\ULorem.java" 
+"javac -d bin -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar com\UltimateBox\UToast.java" 
+"javac -d bin -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar com\UltimateBox\UImageGenerator.java" 
+"javac -d bin -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar com\UltimateBox\UColorPicker.java" 
