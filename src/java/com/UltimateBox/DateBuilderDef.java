@@ -2,6 +2,8 @@
 package com.ultimatebox;
 
 import processing.data.StringList;
+import processing.core.*;
+
 
 /*
 
@@ -36,6 +38,17 @@ import processing.data.StringList;
  */
 public class DateBuilder {
 
+    /**
+     * This class displays .... It is a demonstration...
+     * 
+     */
+
+    /**
+     * Parent handle to hook to 
+     * active user's process
+     */
+    protected PApplet p;
+    
     final String INVALID="INVALID";
     String lastInquire;
     String format;
@@ -48,7 +61,8 @@ public class DateBuilder {
      * 
      * @param parent The parent PApplet (Processing sketch) that uses this instance
      */
-    public DateBuilder() {
+    public DateBuilder(PApplet parent) {
+	p=parent;
 	lastInquire="";
 	format=defaultFormat();
 	data=new StringList();
@@ -132,22 +146,22 @@ public class DateBuilder {
 		if (tok.charAt(0)=='$') {
 		    switch(tok) {
 		    case "$YY":
-			ss+=nf(year(), 2);
+			ss+=p.nf(p.year(), 2);
 			break;
 		    case "$MO":
-			ss+=nf(month(), 2);
+			ss+=p.nf(p.month(), 2);
 			break;
 		    case "$DD":
-			ss+=nf(day(), 2);
+			ss+=p.nf(p.day(), 2);
 			break;
 		    case "$HH":
-			ss+=nf(hour(), 2);
+			ss+=p.nf(p.hour(), 2);
 			break;
 		    case "$MM":
-			ss+=nf(minute(), 2);
+			ss+=p.nf(p.minute(), 2);
 			break;
 		    case "$SS":
-			ss+=nf(second(), 2);
+			ss+=p.nf(p.second(), 2);
 			break;
 		    default:
 			ss+=INVALID;
@@ -241,7 +255,7 @@ public class DateBuilder {
 
 	if (isANumber(c)) return c;
 
-	if (c >= 'a' && c <= 'z') return char(int(c)+(int('A')-int('a')));
+	if (c >= 'a' && c <= 'z') return p.char(p.int(c)+p.int('A')-p.int('a'));
 
 	return  c; //Nothing to do
     }
