@@ -20,7 +20,7 @@ package com.UltimateBox;
 import processing.core.*;
 
 
-public class UArrow {
+public class UArrow{
 
     /**
      * This class displays .... It is a demonstration...
@@ -43,7 +43,7 @@ public class UArrow {
     int arrowLen;
     int arrowWidth;
 
-    color arrowColor;
+    int arrowColor;
     //DIS*004 color arrowBGColor;
 
     boolean dashArrow;
@@ -55,7 +55,7 @@ public class UArrow {
     PGraphics arrPG;
 
 
-    public ArrowPG(PApplet parent, int x11, int y11, int x22, int y22, int sen, int lenHFactor, int widthHFactor ) {
+    public UArrow(PApplet parent, int x11, int y11, int x22, int y22, int sen, int lenHFactor, int widthHFactor ) {
 	p=parent;
 	x1=x11;
 	y1=y11;
@@ -66,7 +66,7 @@ public class UArrow {
 	arrowLen=arrowStrokeWeight*lenHFactor;     //3   6
 	arrowWidth=arrowStrokeWeight*widthHFactor; //3   4
 
-	arrowColor=color(250, 140, 20);
+	arrowColor=p.color(250, 140, 20);
 	//DIS*004 arrowBGColor=color(140, 0);
 
 	setArrowAsSolid();
@@ -74,7 +74,7 @@ public class UArrow {
 	hlen=(x2-x1)/2;
 	hh=(y2-y1)/2;
 
-	arrPG=p.createGraphics(p.round(hlen*2.25), p.round(hh+arrowWidth));
+	arrPG=p.createGraphics(PApplet.round(hlen*2.25f), PApplet.round(hh+arrowWidth));
     }
 
     public void draw() {
@@ -83,7 +83,7 @@ public class UArrow {
 	//p.background(140);
 	p.pushMatrix();
 	p.translate(x1+hlen, y1+hh);
-	p.rotate(sense*90.0*PI/180.0);
+	p.rotate(sense * 90.0f * PApplet.PI / 180.0f);
 
 	p.strokeCap(PApplet.SQUARE);
 	p.strokeWeight(arrowStrokeWeight);
@@ -124,11 +124,11 @@ public class UArrow {
 	p.popStyle();
     }
 
-    public void setStrokeColor(color c) {
+    public void setStrokeColor(int c) {
 	arrowColor=c;
     }
 
-    public color getStrokeColor() { 
+    public int getStrokeColor() { 
 	return arrowColor;
     }
 
@@ -144,7 +144,7 @@ public class UArrow {
 	arrowStrokeWeight=c;
     }
 
-    public color getStrokeWeight() { 
+    public int getStrokeWeight() { 
 	return arrowStrokeWeight;
     }
 
@@ -152,7 +152,7 @@ public class UArrow {
 	sense=c;
     }
 
-    public color getStrokeSense() { 
+    public int getStrokeSense() { 
 	return sense;
     }
 
