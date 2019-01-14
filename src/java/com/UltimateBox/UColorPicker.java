@@ -69,12 +69,18 @@ import processing.core.*;
 */
 // ================================================
  
-public class ColorPicker {
+public class UColorPicker {
 
     /**
-     * This class displays a loading arc. It is a demonstration
+     * This class displays ... It is a demonstration ...
      *
      */
+
+     /**
+     * Parent handle to hook to 
+     * active user's process
+     */
+    protected PApplet p;
     
     int x, y, 
 	w, h, 
@@ -83,8 +89,10 @@ public class ColorPicker {
     PImage cpImage;
     
  
-    public ColorPicker ( int x, int y, int w, int h, int c )
+    public UColorPicker ( PApplet parent,int x, int y, int w, int h, int c )
     {
+	p=parent;
+	
 	this.x = x;
 	this.y = y;
 	this.w = w;
@@ -103,10 +111,10 @@ public class ColorPicker {
 	for ( int i=0; i<cw; i++ ) 
 	    {
 		float nColorPercent = i / (float)cw;
-		float rad = (-360 * nColorPercent) * (PI / 180);
+		float rad = (-360 * nColorPercent) * (PApplet.PI / 180);
 		int nR = (int)(Math.cos(rad) * 127 + 128) << 16;
-		int nG = (int)(Math.cos(rad + 2 * PI / 3) * 127 + 128) << 8;
-		int nB = (int)(Math.cos(rad + 4 * PI / 3) * 127 + 128);
+		int nG = (int)(Math.cos(rad + 2 * PApplet.PI / 3) * 127 + 128) << 8;
+		int nB = (int)(Math.cos(rad + 4 * PApplet.PI / 3) * 127 + 128);
 		int nColor = nR | nG | nB;
  
 		setGradient( i, 0, 1, h/2, 0xFFFFFF, nColor );
@@ -121,15 +129,15 @@ public class ColorPicker {
 	for ( int j=0; j<h; j++ )
 	    {
 		int g = 255 - (int)(j/(float)(h-1) * 255 );
-		drawRect( w-30, j, 30, 1, color( g, g, g ) );
+		drawRect( w-30, j, 30, 1, p.color( g, g, g ) );
 	    }
     }
  
     private void setGradient(int x, int y, float w, float h, int c1, int c2 )
     {
-	float deltaR = red(c2) - red(c1);
-	float deltaG = green(c2) - green(c1);
-	float deltaB = blue(c2) - blue(c1);
+	float deltaR = p.red(c2) - p.red(c1);
+	float deltaG = p.green(c2) - p.green(c1);
+	float deltaB = p.blue(c2) - p.blue(c1);
  
 	for (int j = y; j<(y+h); j++)
 	    {
@@ -152,11 +160,11 @@ public class ColorPicker {
     public void render ()
     {
 	p.image( cpImage, x, y );
-	if ( mousePressed &&
-	     mouseX >= x && 
-	     mouseX < x + w &&
-	     mouseY >= y &&
-	     mouseY < y + h )
+	if ( p.mousePressed &&
+	     p.mouseX >= x && 
+	     p.mouseX < x + w &&
+	     p.mouseY >= y &&
+	     p.mouseY < y + h )
 	    {
 		c = p.get( p.mouseX, p.mouseY );
 	    }
@@ -164,7 +172,7 @@ public class ColorPicker {
 	p.rect( x, y+h+10, 20, 20 );
     }
  
-    color getColor() {
+    int getColor() {
 	return c;
     }
 }
