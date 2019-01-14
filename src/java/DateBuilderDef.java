@@ -1,5 +1,5 @@
 
-package com.ultimatebox.DateBuilder;
+package com.ultimatebox;
 
 import processing.data.StringList;
 
