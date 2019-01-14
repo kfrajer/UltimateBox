@@ -36,7 +36,7 @@ import processing.core.*;
  * 
  * @since 0.10
  */
-public class DateBuilder {
+public class DateBuilderDef {
 
     /**
      * This class displays .... It is a demonstration...
@@ -61,7 +61,7 @@ public class DateBuilder {
      * 
      * @param parent The parent PApplet (Processing sketch) that uses this instance
      */
-    public DateBuilder(PApplet parent) {
+    public DateBuilderDef(PApplet parent) {
 	p=parent;
 	lastInquire="";
 	format=defaultFormat();
@@ -255,7 +255,7 @@ public class DateBuilder {
 
 	if (isANumber(c)) return c;
 
-	if (c >= 'a' && c <= 'z') return p.char(p.int(c)+p.int('A')-p.int('a'));
+	if (c >= 'a' && c <= 'z') return Character.toUpperCase(c); //p.char(p.int(c)+p.int('A')-p.int('a'));
 
 	return  c; //Nothing to do
     }
