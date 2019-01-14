@@ -178,8 +178,8 @@ public class UImageGenerator{
      * 
      * @param par The parent PApplet (Processing sketch) that uses this instance
      */
-    public TestSession(PApplet par) { 
-	p=par;
+    public UImageGenerator(PApplet parent) { 
+	p=parent;
 	initState();
     }
 
@@ -211,7 +211,7 @@ public class UImageGenerator{
      * @param fn File name of image
      */
     public PImage loadImage(String fn) {
-	return p.loadImage(fn, 0, 0);
+	return loadImage(fn, 0, 0);
     }
 
     /**
@@ -225,7 +225,7 @@ public class UImageGenerator{
      */
 
     public PImage loadImage(String fn, float aw, float ah) {
-	return p.loadImage(fn, (int)aw, (int)ah);
+	return loadImage(fn, (int)aw, (int)ah);
     }
 
     /**
@@ -244,7 +244,7 @@ public class UImageGenerator{
 
 	checkProvidedDimension();  //Adjust  ww,hh values, if needed
 
-	println("Now " + ww + " " + hh );
+	p.println("Now " + ww + " " + hh );
 
 	if (testEnabled==false) {
 	    PImage obj=p.loadImage(fn);
@@ -301,9 +301,9 @@ public class UImageGenerator{
 	pg = p.createGraphics(ww, hh);
 	pg.beginDraw();
 	pg.background(102);
-	pg.textAlign(CENTER, CENTER);
-	pg.fill(random(200), random(180), random(200));
-	pg.textSize(0.25*max(ww, hh));
+	pg.textAlign(PApplet.CENTER, PApplet.CENTER);
+	pg.fill(p.random(200), p.random(180), p.random(200));
+	pg.textSize(0.25f*p.max(ww, hh));
 	pg.text(""+counter, pg.width>>1, pg.height>>1);
 	pg.endDraw();
 
@@ -317,8 +317,8 @@ public class UImageGenerator{
      */
     public PGraphics  getRandomPattern() {
 	PGraphics pg; 
-	float dw=ww*0.10;
-	float dh=hh*0.10;
+	float dw=ww*0.10f;
+	float dh=hh*0.10f;
 
 	int[] r2={(int)p.random(5, 255), 0};
 	r2[1]=(int)p.random(r2[0]-4, 255);
@@ -334,7 +334,7 @@ public class UImageGenerator{
 	pg.rectMode(PApplet.CORNER);
 	for (int i=0; i<ww; i+=dw) {
 	    for (int j=0; j<hh; j+=dh) {
-		pg.fill(random(r2[0],r2[1]), p.random(g2[0],g2[1]), p.random(b2[0],b2[1]));
+		pg.fill(p.random(r2[0],r2[1]), p.random(g2[0],g2[1]), p.random(b2[0],b2[1]));
 		pg.rect(i, j, i+dw, j+dh);
 	    }
 	}
