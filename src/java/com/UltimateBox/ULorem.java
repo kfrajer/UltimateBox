@@ -1,4 +1,4 @@
-package com.ultimatebox;
+package com.UltimateBox;
 
 /*
   This library is free software; you can redistribute it and/or

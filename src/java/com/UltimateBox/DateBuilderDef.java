@@ -1,5 +1,4 @@
-
-package com.ultimatebox;
+package com.UltimateBox;
 
 import processing.data.StringList;
 import processing.core.*;

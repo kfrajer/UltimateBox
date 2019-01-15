@@ -1,4 +1,4 @@
-package com.ultimatebox;
+package com.UltimateBox;
 
 /*
   This library is free software; you can redistribute it and/or
@@ -39,8 +39,8 @@ import processing.core.*;
  * file in your favorite browser. Notice a tmp folder containing building info is located in <i>library/tmp/javadoc</i>
  *
  *
- * @author  Josh Bloch
- * @author  Neal Gafter
+ * @author  Kf
+ * @author  Chrisir
  * @since   1.0
  */
 public class UFooter{
@@ -49,8 +49,9 @@ public class UFooter{
      * Parent handle to hook to 
      * active user's process
      */
-    protected PApplet p;   
-    protected PFont pfontNormal; 
+    protected processing.core.PApplet p;   
+    protected PFont pfontNormal;
+    protected String msg;
 
     // consts colors
 
@@ -65,10 +66,17 @@ public class UFooter{
      * @param parent Handdle of active sketch calling this object
      * @param message to display
      */
-    public void UFooter(PApplet parent,String message) {
+    public void UFooter(processing.core.PApplet parent,String message) {
 	p=parent;
-	UFooterLeft(msg);
+	msg=message;
         pfontNormal = p.createFont("Arial", 12);   // small
+    }
+
+     /**
+     * UFooterLeft: TBD
+     */
+    public void UFooterLeft() {
+	UFooterLeft(msg);
     }
 
     /**
@@ -77,7 +85,8 @@ public class UFooter{
      */
     public void UFooterLeft(String message) {
 	// different footers
-	// box 
+	// box
+	msg=message;
 	p.fill(GRAY);
 	p.noStroke();  
 	p.rect(0, p.height-21, 
@@ -90,15 +99,24 @@ public class UFooter{
 	//  message 
 	p.textFont(pfontNormal); // small font "pfontNormal" is default
 	p.fill(WHITE);  // white
-	p.text(msg, 6, p.height-6);
+	p.text(message, 6, p.height-6);
     }
 
     /**
      * UFooterCenter: TBD
      */
-    public void UFooterCenter(String msg) {
+    public void UFooterCenter() {
+	UFooterCenter(msg);
+    }
+
+    /**
+     * UFooterCenter: TBD
+     * @param message to display
+     */
+    public void UFooterCenter(String message) {
 	// different footers
 	// box 
+	msg=message;
 	p.fill(GRAY);
 	p.noStroke();  
 	p.rect(0, p.height-21, 
@@ -112,16 +130,25 @@ public class UFooter{
 	p.textFont(pfontNormal); // small font "pfontNormal" is default
 	p.fill(WHITE);  // white
 	p.textAlign(PApplet.CENTER);   // Middle 
-	p.text(msg, p.width/2, p.height-6);
+	p.text(message, p.width/2, p.height-6);
 	p.textAlign(PApplet.LEFT);       // LEFT is default, restore default
     }
 
     /**
      * UFooterRight: TBD
      */
-    public void UFooterRight(String msg) {
+    public void UFooterRight() {
+	UFooterRight(msg);
+    }
+
+    /**
+     * UFooterRight: TBD
+     * @param message to display
+     */
+    public void UFooterRight(String message) {
 	// different footers
 	// box 
+	msg=message;
 	p.fill(GRAY);
 	p.noStroke();  
 	p.rect(0, p.height-21, 
@@ -135,8 +162,7 @@ public class UFooter{
 	p.textFont(pfontNormal); // small font "pfontNormal" is default
 	p.fill(WHITE);  // white
 	p.textAlign(PApplet.RIGHT);     // RIGHT 
-	p.text(msg, p.width-8, p.height-6);
+	p.text(message, p.width-8, p.height-6);
 	p.textAlign(PApplet.LEFT);       // LEFT is default, restore default
     }
-
 }
