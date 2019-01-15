@@ -25,8 +25,8 @@ public class UHeader{
      * active user's process
      */
     protected PApplet p;
-    PFont pfontNormal; 
-    PFont pfontHeadline; 
+    public PFont pfontNormal; 
+    public PFont pfontHeadline; 
 
     /**
      * TBD

@@ -55,18 +55,20 @@ public class UFooter{
 
     // consts colors
 
-    final int BLACK = 0;
-    final int WHITE = 0xffffffff;
-    final int RED   = 0xffff0000;
-    final int GREEN = 0xff00ff00;
-    final int BLUE  = 0xff0000ff;
-    final int GRAY =  0xff888888;
+    final public int BLACK = 0;
+    final public int WHITE = 0xffffffff;
+    final public int RED   = 0xffff0000;
+    final public int GREEN = 0xff00ff00;
+    final public int BLUE  = 0xff0000ff;
+    final public int GRAY =  0xff888888;
+
+    
     /**
      * Constructor: TBD 
      * @param parent Handdle of active sketch calling this object
      * @param message to display
      */
-    public void UFooter(processing.core.PApplet parent,String message) {
+    public UFooter(processing.core.PApplet parent,String message) {
 	p=parent;
 	msg=message;
         pfontNormal = p.createFont("Arial", 12);   // small
