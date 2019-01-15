@@ -1,4 +1,4 @@
-package com.UltimateBox.UToast;
+package com.UltimateBox;
 
 /*
   This library is free software; you can redistribute it and/or
