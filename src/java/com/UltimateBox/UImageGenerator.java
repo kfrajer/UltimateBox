@@ -1,4 +1,4 @@
-//REFERENCES: https://github.com/processing/processing/blob/master/core%2Fsrc%2Fprocessing%2Fcore%2FPApplet.java#L5309   To L5875
+//references: https://github.com/processing/processing/blob/master/core%2Fsrc%2Fprocessing%2Fcore%2FPApplet.java#L5309   To L5875
 //REFERENCES: 
 //REFERENCES:
 
@@ -176,7 +176,7 @@ public class UImageGenerator{
     /**
      * Constructor for creating a TestSession
      * 
-     * @param par The parent PApplet (Processing sketch) that uses this instance
+     * @param parent The parent PApplet (Processing sketch) that uses this instance
      */
     public UImageGenerator(PApplet parent) { 
 	p=parent;

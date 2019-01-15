@@ -1,4 +1,4 @@
-mkdir bin 
+"mkdir bin"
 "javac -d bin -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar com\UltimateBox\*.java" 
 "javac -d bin -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar com\UltimateBox\DateBuilderDef.java" 
 "javac -d bin -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar com\UltimateBox\UArrow.java" 
@@ -8,3 +8,6 @@ mkdir bin
 "javac -d bin -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar com\UltimateBox\UToast.java" 
 "javac -d bin -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar com\UltimateBox\UImageGenerator.java" 
 "javac -d bin -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar com\UltimateBox\UColorPicker.java" 
+"jar -cf ultimatebox.jar -C bin/ . && move ultimatebox.jar ..\..\library\" 
+"jar tf ..\..\library\ultimatebox.jar" 
+"javadoc -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar -sourcepath com\UltimateBox -d reference com.UltimateBox com\UltimateBox\*.java && move ..\..\" 

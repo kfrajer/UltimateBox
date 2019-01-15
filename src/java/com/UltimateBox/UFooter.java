@@ -63,19 +63,19 @@ public class UFooter{
     /**
      * Constructor: TBD 
      * @param parent Handdle of active sketch calling this object
-     * @param Message to display
+     * @param message to display
      */
-    public void UFooter(PApplet parent,String msg) {
+    public void UFooter(PApplet parent,String message) {
 	p=parent;
 	UFooterLeft(msg);
         pfontNormal = p.createFont("Arial", 12);   // small
-	
     }
 
     /**
      * UFooterLeft: TBD
+     * @param message to display
      */
-    public void UFooterLeft(String msg) {
+    public void UFooterLeft(String message) {
 	// different footers
 	// box 
 	p.fill(GRAY);
