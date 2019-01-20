@@ -1,3 +1,5 @@
+"mklink ultimatebox.jar ..\..\..\library\ultimatebox.jar"
+----
 "mkdir bin"
 "javac -d bin -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar com\UltimateBox\*.java" 
 "javac -d bin -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar com\UltimateBox\DateBuilderDef.java" 
@@ -11,3 +13,5 @@
 "jar -cf ultimatebox.jar -C bin/ . && move ultimatebox.jar ..\..\library\" 
 "jar tf ..\..\library\ultimatebox.jar" 
 "javadoc -cp C:\mySandBox\AppsBinFolder\P3\current\processing\core\library\core.jar -sourcepath com\UltimateBox -d reference com.UltimateBox com\UltimateBox\*.java && move reference ..\..\" 
+http://www.ntu.edu.sg/home/ehchua/programming/java/j9c_packageclasspath.html 
+"mklink ultimatebox.jar ..\..\..\library\ultimatebox.jar" 
