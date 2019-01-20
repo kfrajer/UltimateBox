@@ -372,4 +372,3 @@ public class UImageGenerator{
 	//End checking for wwxhh integrity
     }
 }
-
