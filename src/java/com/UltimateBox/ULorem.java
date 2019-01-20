@@ -15,7 +15,7 @@ package com.UltimateBox;
   Boston, MA  02111-1307  USA
 */
 
-public final class ULorem{
+public final class ULorem {
 
     /**
      * This class displays a .... It is a demonstration...
@@ -50,7 +50,6 @@ public final class ULorem{
      * of defualt size
      * @param len Length of the lorem string to output
      */
-
     public static String ULorem(int len){
 	String ret="";
 
@@ -59,11 +58,12 @@ public final class ULorem{
 
 	int whole = len / lorem.length();
 	int reminder = len % lorem.length();
+	
 	for(int i=0;i<whole;i++){
 	    ret += lorem;
 	}
 	
-	ret+=lorem.substring(0,reminder);;	
+	ret+=lorem.substring(0,reminder);	
 	
 	return(ret);
     }
