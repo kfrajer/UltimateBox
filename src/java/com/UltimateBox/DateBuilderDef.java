@@ -1,9 +1,5 @@
 package com.UltimateBox;
 
-import processing.data.StringList;
-import processing.core.*;
-
-
 /*
 
   This library is free software; you can redistribute it and/or
@@ -20,47 +16,39 @@ import processing.core.*;
   Boston, MA  02111-1307  USA
 */
 
+import processing.data.*;
+import processing.core.*;
+
 /**
  * Class for generating strings with date-time commands
  * 
- * <p>
- * This class permits the generation of strings with date-time data codes embeded <br>
- * in the actual returning string Codes used follow the standard defined at <br>
- * Java Oracle 
- * More comments....
- * </p>
  * @author Kfrajer/Chrisir
  * 
  * @version 0.10
  * 
  * @since 0.10
  */
-public class DateBuilderDef {
-
-    /**
-     * This class displays .... It is a demonstration...
-     * 
-     */
+public class DateBuilderDef{
 
     /**
      * Parent handle to hook to 
      * active user's process
      */
-    protected PApplet p;
+    protected processing.core.PApplet p;
     
-    final String INVALID="INVALID";
-    String lastInquire;
-    String format;
-    StringList data;
+    public final String INVALID="INVALID";
+    public String lastInquire;
+    public String format;
+    public StringList data;
 
 
 
     /**
-     * Constructor for creating a Stopwatch
+     * Constructor for creating a Date Builder instance
      * 
      * @param parent The parent PApplet (Processing sketch) that uses this instance
      */
-    public DateBuilderDef(PApplet parent) {
+    public DateBuilderDef(processing.core.PApplet parent) {
 	p=parent;
 	lastInquire="";
 	format=defaultFormat();
@@ -78,7 +66,7 @@ public class DateBuilderDef {
     /**
      *
      *  TBD
-     *
+     *  
      */
     public String printCurrentDate() {
 	return printCurrentDate(format);
@@ -87,6 +75,7 @@ public class DateBuilderDef {
     /**
      *
      *  TBD
+     *  @param fmt TBD
      *
      */
     public String printCurrentDate(String fmt) { 
@@ -107,6 +96,7 @@ public class DateBuilderDef {
      *
      *  TBD
      *
+     *  @param instr TBD
      */    
     public void dateTokenizer(String instr) {
 
@@ -143,13 +133,7 @@ public class DateBuilderDef {
 	for (String tok : data) {
 	    if (tok.length()>0) {
 		if (tok.charAt(0)=='$') {
-		    switch(tok) {
-		    case "$YY":
-			ss+=p.nf(p.year(), 2);
-			break;
-		    case "$MO":
-			ss+=p.nf(p.month(), 2);
-			break;
+		    switch(tok) {		    
 		    case "$DD":
 			ss+=p.nf(p.day(), 2);
 			break;
@@ -159,8 +143,17 @@ public class DateBuilderDef {
 		    case "$MM":
 			ss+=p.nf(p.minute(), 2);
 			break;
+		    case "$MO":
+			ss+=p.nf(p.month(), 2);
+			break;
+		    case "$MS":
+			ss+=p.nf(p.millis()%1000, 3,0);
+			break;
 		    case "$SS":
 			ss+=p.nf(p.second(), 2);
+			break;
+		    case "$YY":
+			ss+=p.nf(p.year(), 2);
 			break;
 		    default:
 			ss+=INVALID;
@@ -263,6 +256,7 @@ public class DateBuilderDef {
      *
      *  TBD
      *
+     *  @param fmt TBD
      */    
     public String testCase(String fmt) {
 
