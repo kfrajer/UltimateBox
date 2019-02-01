@@ -30,7 +30,7 @@ Tested on Windows OS with java version 1.8.0_191 and Processing 3.4
 3. Download this repo and unpacked it in your prefered location
 4. Navigate to UltimateBox/src/java
 5. Open script and adjust location of core.jar
-5b.Execute script.bat
+    5b.Execute script.bat
 6. Script generates a jar located at UltimateBox/library
 7. Copy this jar inside the code folder in any of the examples
 8. Go to UltimateBox/examples to run different demos.  See the [Overview](https://github.com/kfrajer/UltimateBox#overview) section for currently available examples.
